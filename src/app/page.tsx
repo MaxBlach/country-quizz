@@ -1,16 +1,15 @@
-'use client'
+import Quiz  from '@/src/components/quiz/Quiz';
+import styles from '@/src/app/css-compiled/page.module.css'
+import type { IQuestion } from '../lib/types';
 
-import Quiz  from '@/src/components/Quiz';
-import styles from "./page.module.css";
-
-const response = await fetch('http://localhost:3000/api/countries').then(res => res.json())
-const data = await response
+const response = await fetch('http://localhost:3000/api/countries').then(res => res.json());
+const questions:IQuestion[] = await response
 
 export default function Home() {
 
   return (
-    <div className={styles.page}>
-      <Quiz countriesList={data}/>
+    <div className={styles.center}>
+      <Quiz questions={questions}/>
     </div>
   );
 }
