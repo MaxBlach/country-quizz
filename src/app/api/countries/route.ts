@@ -6,14 +6,16 @@ const generateQuestions = (countryIndex: number, countries: ICountry[]): IQuesti
     const badAnswersIndexes = getUniqueRandomNumber(3,countries.length, [countryIndex])
     const correctAnswer: IAnswer = {
         answer: countries[countryIndex].name,
-        isCorrect:true
+        isCorrect:true,
+        isSelected: false
     }
     return {
         flag: countries[countryIndex].flag,
         answers: shuffle([
             correctAnswer,
-            ...badAnswersIndexes.map(answerIndex => ({answer: countries[answerIndex].name, isCorrect: false}))
-        ])
+            ...badAnswersIndexes.map(answerIndex => ({answer: countries[answerIndex].name, isCorrect: false, isSelected: false})),
+        ]),
+        isAnswered: false,
     }
 }
 

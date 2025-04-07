@@ -23,12 +23,14 @@ interface ICountry {
 
 interface IAnswer {
   answer: string
-  isCorrect: boolean
+  isCorrect: boolean,
+  isSelected: boolean,
 }
 
 interface IQuestion {
   flag:string,
-  answers: IAnswer[]
+  answers: IAnswer[],
+  isAnswered: boolean,
 }
 
 export type {

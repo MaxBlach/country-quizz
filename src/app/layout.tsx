@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from '@/src/app/css-compiled/layout.module.css'
+import styles from '@/src/app/css-compiled/scss/layout.module.css'
 import type { Metadata } from "next";
 import background from '../../public/bg.jpg'
 
@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body >
+      <body className={styles.body}>
         <div className={styles.background}>
         <Image 
         src={background}

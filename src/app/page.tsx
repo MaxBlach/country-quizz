@@ -1,11 +1,14 @@
 import Quiz  from '@/src/components/quiz/Quiz';
-import styles from '@/src/app/css-compiled/page.module.css'
+import styles from '@/src/app/css-compiled/scss/page.module.css'
 import type { IQuestion } from '../lib/types';
 
-const response = await fetch('http://localhost:3000/api/countries').then(res => res.json());
-const questions:IQuestion[] = await response
 
-export default function Home() {
+export default async function Home() {
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/countries`, {
+    cache: 'no-store'
+  })
+  const questions: IQuestion[] = await res.json()
 
   return (
     <div className={styles.center}>

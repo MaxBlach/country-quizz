@@ -1,0 +1,44 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: #E2E4F3;
+    background-color: #393F6E;
+    border: none;
+    border-radius: 12px;
+    min-width: 240px;
+    min-height: 55px;
+    width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+    box-sizing: border-box; 
+    transition: all 0.3s ease;
+    &:hover:enabled{
+        cursor: pointer;
+        background: linear-gradient(#E65895, #BC6BE8);
+        transform: scale(1.05);
+        opacity: 0.95;
+    }
+}
+
+.buttonList{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;      
+}
+
+.question{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.questionTitle{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
