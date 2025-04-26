@@ -36,6 +36,7 @@ const Quiz = ({ questions } : {questions: IQuestion[]}) => {
             })}
           </div>
           <Question isCurrentQuestion={selectedQuestion === questions[currentQuestion]} question={selectedQuestion} handleAnswer={handleAnswer} isAnswered={selectedQuestion.isAnswered}/>
+          {selectedQuestion !== questions[currentQuestion] && <button className={styles.buttonNext} onClick={() => setSelectedQuestion(questions[currentQuestion])}>Next Question</button>}
         </div>
       </>}
       {currentQuestion >= 10 && 
