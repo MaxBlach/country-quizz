@@ -31,7 +31,7 @@ const Question = ({ question, handleAnswer, isCurrentQuestion, isAnswered }: {
                             a.isSelected = true
                             return handleAnswer(a.isCorrect)}} 
                           key={a.answer}
-                          >{isAnswered && a.isCorrect && (<Image src={validIcon} alt='validIcon'/>)}{a.isSelected && !a.isCorrect && (<Image src={invalidIcon} alt='validIcon'/>)}{a.answer}</button>
+                          >{isAnswered && a.isCorrect && (<Image src={validIcon} alt='validIcon'/>)}{a.isSelected && !a.isCorrect && (<Image src={invalidIcon} alt='invalidIcon'/>)}{a.answer}</button>
         })}
       </div>
     </div>
